@@ -111,7 +111,7 @@
   height: 100vh;
   width: 100vw;
   overflow: hidden;
-  background: #595b49;
+  background: red;
   padding-right: 1rem;
   transition: all 0.5s ease-out;
   transform: translateY(-100%);
@@ -168,7 +168,7 @@
 }
 
 body {
-  background: #595b49;
+  background: green;
   color: #a1a89a;
   height: 100vh;
   font-family: 'Jost', sans-serif;
