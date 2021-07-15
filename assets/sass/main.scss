@@ -3,9 +3,8 @@
 @import 'menu';
 @import url('https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400;700&display=swap');
 body {
-    background: $color-primary;
+    background: $background;
     color: $color-secondary;
-    //height: 100vh;
     font-family: 'Jost', sans-serif;
     line-height: 1rem;
 }
@@ -28,37 +27,6 @@ a {
 
 p {
     line-height: 1.8rem;
-}
-
-header {
-    position: fixed;
-    top: 0;
-    z-index: 2;
-    width: 100%;
-    padding: 1rem;
-}
-
-main {
-    height: 100%;
-    width: 100%;
-    .social-icons {
-        position: fixed;
-        bottom: 1rem;
-        left: 1rem;
-        font-size: 2rem;
-        a {
-            padding: 0.4rem;
-        }
-    }
-}
-
-footer {
-    font-size: 1rem;
-    position: fixed;
-    bottom: 0.4rem;
-    right: 1rem;
-    text-align: right;
-    padding: 1rem;
 }
 
 button {
@@ -95,52 +63,3 @@ button {
         }
     }
 }
-
-.light {
-    @include light($light-theme: true);
-}
-
-
-// ABOUT
-.subpage {
-    background: $color-primary;
-    max-height: calc(100vh - 5rem);
-    .about {
-        width: 61rem;
-        margin: 5rem auto;
-        height: calc(100% - 10rem);
-        justify-content: center;
-        align-items: center;
-        display: flex;
-        .columns {
-            @include columns();
-            height: 100%;
-        }
-    }
-    h1 {
-        padding-bottom: 2rem;
-        font-size: 3rem;
-        text-align: center;
-    }
-    button {
-        margin-top: 2rem;
-        background: $color-primary;
-        text-align: center;
-    }
-    section {
-        justify-content: center;
-        align-items: center;
-        align-content: center;
-        display: flex;
-        flex-direction: column;
-    }
-}
-
-//Projekts
-.projects{
-    background: white;
-    .column{
-        background: #fafafa;
-    }
-}
- 

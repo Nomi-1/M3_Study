@@ -27,7 +27,7 @@
 }
 
 .home .last {
-  color: #595b49;
+  color: #79BA11;
 }
 
 .home h2 {
@@ -41,8 +41,17 @@
   width: 100%;
 }
 
-.menu {
-  background: red;
+.menu-wrapper {
+  padding: 1rem;
+  background: #ededed;
+}
+
+.menu-wrapper .logo {
+  max-width: 210px;
+}
+
+.menu-wrapper .logo img {
+  width: 100%;
 }
 
 @media screen and (max-width: 920px) {
@@ -62,7 +71,7 @@
     top: 0.5rem;
     width: 28px;
     height: 3px;
-    background: #a1a89a;
+    background: #759E33;
     transition: all 0.2s ease-out;
   }
   .menu-btn .menu-btn-burger::before, .menu-btn .menu-btn-burger::after {
@@ -71,7 +80,7 @@
     top: -8px;
     width: 28px;
     height: 3px;
-    background: #a1a89a;
+    background: #759E33;
     transition: all 0.2s ease-out;
   }
   .menu-btn .menu-btn-burger::after {
@@ -107,7 +116,7 @@
     height: 100vh;
     width: 100vw;
     overflow: hidden;
-    background: #595b49;
+    background: #79BA11;
     padding-right: 1rem;
     transition: all 0.5s ease-out;
     transform: translateY(-100%);
@@ -137,7 +146,7 @@
     transition: all 0.5s ease-out;
   }
   .nav .menu-nav-link:hover {
-    color: #a1a89a;
+    color: #759E33;
   }
   .menu-nav-item:nth-child(1) {
     transition-delay: 0.25s;
@@ -154,9 +163,8 @@
 }
 
 body {
-  background: #595b49;
-  color: #a1a89a;
-  height: 100vh;
+  background: white;
+  color: #759E33;
   font-family: 'Jost', sans-serif;
   line-height: 1rem;
 }
@@ -169,54 +177,21 @@ h3 {
 }
 
 a {
-  color: #a1a89a;
+  color: #759E33;
   text-decoration: none;
   transition: all 0.2s ease-out;
 }
 
 a:hover {
-  color: #595b49;
+  color: #79BA11;
 }
 
 p {
   line-height: 1.8rem;
 }
 
-header {
-  position: fixed;
-  top: 0;
-  z-index: 2;
-  width: 100%;
-  padding: 1rem;
-}
-
-main {
-  height: 100%;
-  width: 100%;
-}
-
-main .social-icons {
-  position: fixed;
-  bottom: 1rem;
-  left: 1rem;
-  font-size: 2rem;
-}
-
-main .social-icons a {
-  padding: 0.4rem;
-}
-
-footer {
-  font-size: 1rem;
-  position: fixed;
-  bottom: 0.4rem;
-  right: 1rem;
-  text-align: right;
-  padding: 1rem;
-}
-
 button {
-  background: #595b49;
+  background: #79BA11;
   border: 1px solid #fff;
   font-size: 1.2rem;
   padding: 10px 15px;
@@ -232,8 +207,8 @@ button i {
 }
 
 button:hover {
-  background: #a1a89a;
-  border-color: #a1a89a;
+  background: #759E33;
+  border-color: #759E33;
   color: #fff;
 }
 
@@ -247,107 +222,11 @@ button:hover i {
 }
 
 #button-back:hover {
-  background: #a1a89a;
-  border-color: #a1a89a;
+  background: #759E33;
+  border-color: #759E33;
 }
 
 #button-back:hover i {
   padding-left: 0rem;
   padding-right: 1rem;
-}
-
-.light body {
-  color: #000;
-  background: #fff;
-}
-
-.light a:hover,
-.light i:hover {
-  color: white;
-}
-
-.light button {
-  border: 1px solid #a1a89a;
-  color: #a1a89a;
-}
-
-.light button i {
-  color: #a1a89a;
-}
-
-.light button:hover {
-  color: #595b49;
-}
-
-.light button:hover i {
-  color: #595b49;
-}
-
-.light .home {
-  background: url("../img/background-1.jpg");
-  background-size: cover;
-}
-
-.subpage {
-  background: #595b49;
-  max-height: calc(100vh - 5rem);
-}
-
-.subpage .about {
-  width: 61rem;
-  margin: 5rem auto;
-  height: calc(100% - 10rem);
-  justify-content: center;
-  align-items: center;
-  display: flex;
-}
-
-.subpage .about .columns {
-  position: relative;
-  width: auto;
-  overflow: hidden;
-  display: flex;
-  flex-direction: row;
-  align-content: stretch;
-  align-items: stretch;
-  flex-wrap: wrap;
-  margin: calc((2rem / 2) * -1);
-  height: 100%;
-}
-
-.subpage .about .columns .column {
-  margin: 1rem;
-  flex-basis: calc(50% - 2rem);
-  flex-grow: 0;
-  min-width: calc(50% - 2rem);
-  border: 1px solid #a1a89a;
-  padding: 1rem;
-}
-
-.subpage h1 {
-  padding-bottom: 2rem;
-  font-size: 3rem;
-  text-align: center;
-}
-
-.subpage button {
-  margin-top: 2rem;
-  background: #595b49;
-  text-align: center;
-}
-
-.subpage section {
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  display: flex;
-  flex-direction: column;
-}
-
-.projects {
-  background: white;
-}
-
-.projects .column {
-  background: #fafafa;
 }

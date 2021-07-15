@@ -1,45 +1,17 @@
-$color-primary: #595b49;
-$color-secondary: #a1a89a;
+$color-primary: #79BA11;
+$color-secondary: #759E33;
+$background: white;
 $transition-base: all 0.2s ease-out;
 $transition-long: all 0.5s ease-out;
 $white: #fff;
 $black: #000;
 $light-grey: #ededed;
 $dark-grey: #333;
+
 * {
     box-sizing: border-box;
     padding: 0rem;
     margin: 0rem;
-}
-
-@mixin light($light-theme: true) {
-    @if $light-theme {
-        body {
-            color: $black;
-            background: $white;
-        }
-        a:hover,
-        i:hover {
-            color: white;
-        }
-        button {
-            border: 1px solid $color-secondary;
-            color: $color-secondary;
-            i {
-                color: $color-secondary;
-            }
-            &:hover {
-                color: $color-primary;
-                i {
-                    color: $color-primary;
-                }
-            }
-        }
-        .home {
-            background: url('../img/background-1.jpg');
-            background-size: cover;
-        }
-    }
 }
 
 @mixin columns () {

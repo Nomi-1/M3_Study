@@ -1,7 +1,14 @@
-
-.menu{
-    background: red;
+.menu-wrapper {
+  padding: 1rem;
+  background: #ededed;
+  .logo {
+    max-width: 210px;
+    img {
+      width: 100%;
+    }
+  }
 }
+
 @media screen and(max-width: 920px) {
   .menu-btn {
     position: absolute;
