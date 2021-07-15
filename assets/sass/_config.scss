@@ -7,12 +7,22 @@ $white: #fff;
 $black: #000;
 $light-grey: #ededed;
 $dark-grey: #333;
+$content-width: 70rem;
 
 * {
     box-sizing: border-box;
     padding: 0rem;
     margin: 0rem;
 }
+body{
+   // display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    min-height: 100vh;
+}
+
 
 @mixin columns () {
     position: relative;
