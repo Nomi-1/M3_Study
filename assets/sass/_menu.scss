@@ -1,16 +1,17 @@
+/*
+* Menu Setup
+*
+*/
+
+// Menu Wrapper is the base of the menu
 .menu-wrapper {
   padding: 1rem;
   width: 100%;
   display: flex;
   flex-basis: 100%;
   border-bottom: 1px solid $light-grey;
-  .logo {
-    max-width: 210px;
-    img {
-      width: 100%;
-    }
-  }
-  >.inner{
+
+  > .inner {
     width: $content-width;
     margin: 0 auto;
     display: flex;
@@ -18,6 +19,16 @@
     align-content: center;
     align-items: center;
   }
+
+  // Logo CSS
+  .logo {
+    max-width: 210px;
+    img {
+      width: 100%;
+    }
+  }
+
+  // List of Menu points
   .ed-menu {
     ul {
       list-style-type: none;
@@ -26,138 +37,125 @@
       display: flex;
       width: auto;
       flex: 1 0 auto;
-      li{
+      li {
         background: white;
         padding: 10px 15px;
-        &:not(:last-child){
+        border: 1px solid $color-primary;
+        transition: $transition-long;
+        &:hover,
+        &.active {
+          background: $color-primary;
+          a {
+            color: white;
+          }
+        }
+
+        &:not(:last-child) {
           margin: 0px 32px 0px 0px;
         }
       }
     }
   }
-  .mobile-cont{
+  // Mobile content shouldn't displayed on desktop
+  .mobile-cont {
     visibility: hidden;
     opacity: 0;
     display: none;
   }
 }
 
+/*
+* At Breakpoint 960px iPad standard is reached and
+* menu switches to mobile view
+*/
 
 @media screen and(max-width: 920px) {
-  .mobile-cont{
+  .mobile-cont {
     visibility: visible;
     opacity: 1;
     display: flex;
-  }
-  .menu-wrapper .ed-menu{
-    width: 100%;
-    height: 100%;
-    background: $background;
-    position: absolute;
-    left: auto;
-    top: 0;
-    right: -100%;
-    transform: translate3d(0, -100%, 0)
-  }
-  .menu-btn {
-    position: absolute;
-    z-index: 1;
-    right: 1rem;
-    top: 1rem;
-    height: 20px;
-    width: 28px;
-    cursor: pointer;
-    transition: $transition-base;
-    .menu-btn-burger {
-      position: absolute;
-      right: 0;
-      top: 0.5rem;
-      width: 28px;
-      height: 3px;
-      background: $color-secondary;
-      transition: $transition-base;
-      &::before,
-      &::after {
-        content: "";
-        position: absolute;
-        top: -8px;
-        width: 28px;
-        height: 3px;
-        background: $color-secondary;
-        transition: $transition-base;
+    flex-grow: 1;
+    flex-basis: auto;
+    max-width: 100%;
+    flex-direction: column;
+    > .inner {
+      place-content: center flex-end;
+      align-items: center;
+      .ed-icon {
+        margin: auto 1rem auto auto;
+        text-align: center;
+        flex-basis: auto;
       }
-      &::after {
-        top: 8px;
-        width: 20px;
-      }
-      &.open {
-        transform: rotate(720deg);
-        background: transparent;
-        &:before {
-          transform: rotate(45deg) translate(5px, 8px);
-        }
-        &:after {
+      .menu-trigger {
+        flex-basis: auto;
+        opacity: 1;
+        z-index: 101;
+        cursor: pointer;
+        position: relative;
+
+        .menu-trigger-inner {
+          position: absolute;
+          right: 0;
+          top: 0.5rem;
           width: 28px;
-          transform: rotate(-45deg) translate(3px, -7px);
+          height: 3px;
+          background: $color-secondary;
+          transition: $transition-base;
+          &::before,
+          &::after {
+            content: "";
+            position: absolute;
+            top: -8px;
+            width: 28px;
+            height: 3px;
+            background: $color-secondary;
+            transition: $transition-base;
+          }
+          &::after {
+            top: 8px;
+            width: 20px;
+          }
+          &.open {
+            transform: rotate(720deg);
+            background: transparent;
+            &:before {
+              transform: rotate(45deg) translate(5px, 8px);
+            }
+            &:after {
+              width: 28px;
+              transform: rotate(-45deg) translate(3px, -7px);
+            }
+          }
         }
       }
     }
   }
-
-  .nav {
-    position: fixed;
-    top: 0px;
-    left: 0;
-    width: 100vw;
-    visibility: hidden;
-    &.open {
-      visibility: visible !important;
-    }
-    .menu-nav {
-      display: flex;
-      flex-flow: column wrap;
-      justify-content: center;
-      text-align: center;
-      height: 100vh;
-      width: 100vw;
+  .menu-wrapper {
+    > .inner {
+      width: 100%;
       overflow: hidden;
-      background: $color-primary;
-      padding-right: 1rem;
-      transition: $transition-long;
-      transform: translateY(-100%);
-      &.open {
-        transform: translateY(0%);
-      }
-      &-item {
-        transform: translateX(100vw);
-        transition: $transition-long;
-        list-style-type: none;
-        &.open {
-          transform: translateX(0);
-        }
-        a:hover {
-          color: $white;
-        }
-        &.active > a {
-          color: $white;
-        }
-      }
-      &-link {
-        display: inline-block;
-        font-size: 2rem;
-        text-transform: uppercase;
-        padding: 2rem 0rem;
-        transition: $transition-long;
-        &:hover {
-          color: $color-secondary;
-        }
-      }
     }
-  }
-
-  @for $i from 1 through 4 {
-    .menu-nav-item:nth-child(#{$i}) {
-      transition-delay: ($i * 0.1s) + 0.15s;
+    .ed-menu {
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      align-items: center;
+      width: 100%;
+      min-height: 100%;
+      background: $background;
+      left: auto;
+      top: 0;
+      right: -100%;
+      transform: translate3d(0, -100%, 0);
+      ul {
+        max-width: 50%;
+        flex-direction: column;
+        li {
+          width: auto;
+          margin: 0px 0px 16px 0px !important;
+        }
+      }
     }
   }
 }
