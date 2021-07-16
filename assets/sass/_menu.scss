@@ -69,81 +69,77 @@
 */
 
 @media screen and(max-width: 920px) {
-  // Initialization for the mobile menu 
-  .mobile-cont {
-    visibility: visible;
-    opacity: 1;
-    display: flex;
-    flex-grow: 1;
-    flex-basis: auto;
+  body {
     max-width: 100%;
-    flex-direction: column;
-    
-    > .inner {
-      place-content: center flex-end;
-      align-items: center;
-      
-      // Phone Icon stlye
-      .ed-icon {
-        margin: auto 1rem auto auto;
-        text-align: center;
-        flex-basis: auto;
-      }
-
-      // Initialization Trigger
-      .menu-trigger {
-        flex-basis: auto;
-        opacity: 1;
-        z-index: 101;
-        cursor: pointer;
-        position: relative;
-        
-        // Trigger creation
-        .menu-trigger-inner {
-          position: absolute;
-          right: 0;
-          top: 0.5rem;
-          width: 28px;
-          height: 3px;
-          background: $color-secondary;
-          transition: $transition-base;
-          &::before,
-          &::after {
-            content: "";
-            position: absolute;
-            top: -8px;
-            width: 28px;
-            height: 3px;
-            background: $color-secondary;
-            transition: $transition-base;
-          }
-          &::after {
-            top: 8px;
-            width: 20px;
-          }
-          &.open {
-            transform: rotate(720deg);
-            background: transparent;
-            &:before {
-              transform: rotate(45deg) translate(5px, 8px);
-            }
-            &:after {
-              width: 28px;
-              transform: rotate(-45deg) translate(3px, -7px);
-            }
-          }
-        }
-      }
-    }
+    overflow: hidden;
   }
-
   // Menu wrapper behavoir while mobile
   .menu-wrapper {
     > .inner {
       width: 100%;
       overflow: hidden;
     }
-    
+    // Initialization for the mobile menu
+    .mobile-cont {
+      visibility: visible;
+      opacity: 1;
+      display: flex;
+      flex-grow: 1;
+      flex-basis: auto;
+      max-width: 100%;
+      flex-direction: column;
+
+      > .inner {
+        place-content: center flex-end;
+        align-items: center;
+
+        // Initialization Trigger
+        .menu-trigger {
+          flex-basis: auto;
+          opacity: 1;
+          z-index: 101;
+          cursor: pointer;
+          position: relative;
+
+          // Trigger creation
+          .menu-trigger-inner {
+            position: absolute;
+            right: 0;
+            top: 0.5rem;
+            width: 28px;
+            height: 3px;
+            background: $color-secondary;
+            transition: $transition-base;
+            &::before,
+            &::after {
+              content: "";
+              position: absolute;
+              top: -8px;
+              width: 28px;
+              height: 3px;
+              background: $color-secondary;
+              transition: $transition-base;
+            }
+            &::after {
+              top: 8px;
+              width: 20px;
+            }
+            &.open {
+              transform: rotate(720deg);
+              background: transparent;
+              &:before {
+                transform: rotate(45deg) translate(5px, 8px);
+              }
+              &:after {
+                width: 28px;
+                transform: rotate(-45deg) translate(3px, -7px);
+              }
+            }
+          }
+        }
+      }
+    }
+
     // Menu behavoir while mobile
     .ed-menu {
       position: absolute;
