@@ -20,7 +20,7 @@
     align-items: center;
   }
 
-  // Logo CSS
+  // Logo initialization
   .logo {
     max-width: 210px;
     img {
@@ -28,7 +28,7 @@
     }
   }
 
-  // List of Menu points
+  // Initialization for the menu points
   .ed-menu {
     ul {
       list-style-type: none;
@@ -38,7 +38,6 @@
       width: auto;
       flex: 1 0 auto;
       li {
-        background: white;
         padding: 10px 15px;
         border: 1px solid $color-primary;
         transition: $transition-long;
@@ -49,7 +48,7 @@
             color: white;
           }
         }
-
+        // Sets the gaps between
         &:not(:last-child) {
           margin: 0px 32px 0px 0px;
         }
@@ -70,6 +69,7 @@
 */
 
 @media screen and(max-width: 920px) {
+  // Initialization for the mobile menu 
   .mobile-cont {
     visibility: visible;
     opacity: 1;
@@ -78,21 +78,27 @@
     flex-basis: auto;
     max-width: 100%;
     flex-direction: column;
+    
     > .inner {
       place-content: center flex-end;
       align-items: center;
+      
+      // Phone Icon stlye
       .ed-icon {
         margin: auto 1rem auto auto;
         text-align: center;
         flex-basis: auto;
       }
+
+      // Initialization Trigger
       .menu-trigger {
         flex-basis: auto;
         opacity: 1;
         z-index: 101;
         cursor: pointer;
         position: relative;
-
+        
+        // Trigger creation
         .menu-trigger-inner {
           position: absolute;
           right: 0;
@@ -130,11 +136,15 @@
       }
     }
   }
+
+  // Menu wrapper behavoir while mobile
   .menu-wrapper {
     > .inner {
       width: 100%;
       overflow: hidden;
     }
+    
+    // Menu behavoir while mobile
     .ed-menu {
       position: absolute;
       display: flex;

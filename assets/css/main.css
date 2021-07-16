@@ -87,7 +87,6 @@ body {
 }
 
 .menu-wrapper .ed-menu ul li {
-  background: white;
   padding: 10px 15px;
   border: 1px solid #79BA11;
   transition: all 0.5s ease-out;
