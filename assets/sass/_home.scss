@@ -29,10 +29,53 @@
     }
   }
 }
-.test{
+.about {
   display: flex;
   width: $content-width;
   margin: 0 auto;
   flex-direction: column;
   padding: 7rem 0rem;
+}
+.cta {
+  background-image: url("../img/background_home_5.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 2rem 0rem;
+  width: 100%;
+
+  > .inner {
+    display: flex;
+    background: rgba(white, 0.85);
+    padding: 1rem;
+    position: relative;
+    width: 30%;
+    margin: 0 auto;
+    flex-direction: column;
+    padding: 2rem;
+    border: 2px solid $color-primary; 
+    justify-content: center;
+    h2, p {
+      text-align: center;
+    }
+    .button{
+      margin: 0 auto;
+    }
+  }
+}
+.menu{
+  padding: 7rem 0rem;
+}
+.gallery{
+  display: flex;
+ flex-direction: row;
+  height: 23rem;
+  overflow: hidden;
+  a{
+    max-width: 20%;
+  }
+  img{
+    width: 100%;
+  }
 }

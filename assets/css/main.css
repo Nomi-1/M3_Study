@@ -32,12 +32,62 @@
   width: 500px;
 }
 
-.test {
+.about {
   display: flex;
   width: 70rem;
   margin: 0 auto;
   flex-direction: column;
   padding: 7rem 0rem;
+}
+
+.cta {
+  background-image: url("../img/background_home_5.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 2rem 0rem;
+  width: 100%;
+}
+
+.cta > .inner {
+  display: flex;
+  background: rgba(255, 255, 255, 0.85);
+  padding: 1rem;
+  position: relative;
+  width: 30%;
+  margin: 0 auto;
+  flex-direction: column;
+  padding: 2rem;
+  border: 2px solid #79ba11;
+  justify-content: center;
+}
+
+.cta > .inner h2, .cta > .inner p {
+  text-align: center;
+}
+
+.cta > .inner .button {
+  margin: 0 auto;
+}
+
+.menu {
+  padding: 7rem 0rem;
+}
+
+.gallery {
+  display: flex;
+  flex-direction: row;
+  height: 23rem;
+  overflow: hidden;
+}
+
+.gallery a {
+  max-width: 20%;
+}
+
+.gallery img {
+  width: 100%;
 }
 
 /*
