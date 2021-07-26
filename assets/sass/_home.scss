@@ -66,16 +66,20 @@
 }
 .menu{
   padding: 7rem 0rem;
+  width: $content-width;
 }
 .gallery{
   display: flex;
  flex-direction: row;
-  height: 23rem;
+  height: 20rem;
   overflow: hidden;
   a{
     max-width: 20%;
   }
   img{
+    height: 100%;
     width: 100%;
+    object-fit: cover;
+    object-position: center center;
   }
 }

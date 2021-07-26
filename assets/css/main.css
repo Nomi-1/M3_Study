@@ -73,12 +73,13 @@
 
 .menu {
   padding: 7rem 0rem;
+  width: 70rem;
 }
 
 .gallery {
   display: flex;
   flex-direction: row;
-  height: 23rem;
+  height: 20rem;
   overflow: hidden;
 }
 
@@ -87,7 +88,10 @@
 }
 
 .gallery img {
+  height: 100%;
   width: 100%;
+  object-fit: cover;
+  object-position: center center;
 }
 
 /*
@@ -275,12 +279,19 @@ body {
   font-family: "Raleway", sans-serif;
 }
 
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
 h1,
 h2 {
   font-weight: 200;
   line-height: 3rem;
   font-family: "Concert One";
-  font-size: 2.5rem;
 }
 
 .special_h2 {

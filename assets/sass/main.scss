@@ -29,13 +29,17 @@ body {
   background: $background;
   font-family: "Raleway", sans-serif;
 }
-
+h1{
+  font-size: 3rem;
+}
+h2{
+  font-size: 2.5rem;
+}
 h1,
 h2 {
   font-weight: 200;
   line-height: 3rem;
   font-family: "Concert One";
-  font-size: 2.5rem;
 }
 .special_h2 {
   position: relative;
