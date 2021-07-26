@@ -1,34 +1,3 @@
-//const menuBtn = document.querySelector('.menu-btn');
-/*const hamburger = document.querySelector('.menu-btn-burger');
-const nav = document.querySelector('.nav');
-const menuNav = document.querySelector('.menu-nav')
-const menuNavItem = document.querySelectorAll('.menu-nav-item')
-*/
-//var menuBtn = $('.menu-btn')
-
-/*
-
-let showMenu = false;
-
-
-function toggleMenu() {
-    if (!showMenu) {
-        hamburger.classList.add('open');
-        nav.classList.add('open');
-        menuNav.classList.add('open');
-        menuNavItem.forEach(item => item.classList.add('open'));
-
-        showMenu = true;
-    } else {
-        hamburger.classList.remove('open');
-        nav.classList.remove('open');
-        menuNav.classList.remove('open');
-        menuNavItem.forEach(item => item.classList.remove('open'));
-
-        showMenu = false;
-    }
-}*/
-
 (function() {
 	$(function() {
 		$('.menu-wrapper').each(function() {
@@ -139,17 +108,7 @@ function toggleMenu() {
 	 * param {jQuery} $element
 	 */
 	var getStickyMode = function($element) {
-		var fillValue = getComputedStyle($element[0]).fill;
-
-		return fillValue === 'rgb(255, 0, 0)' ?
-			'sticky_banner' :
-			fillValue === 'rgb(0, 255, 0)' ?
-			'sticky_menu' :
-			fillValue === 'rgb(0, 0, 255)' ?
-			'sticky_instant' :
-			fillValue === 'rgb(255, 255, 255)' ?
-			'sticky_reverse' :
-			'sticky_none';
+		return 'sticky_banner';
 	};
 
 	/**

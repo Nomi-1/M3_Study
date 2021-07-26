@@ -1,65 +1,109 @@
-@import 'config';
-@import 'home';
-@import 'menu';
-@import url('https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400;700&display=swap');
-body {
+$color-primary: #79BA11;
+$color-secondary: #759E33;
+$color-default: #444;
+$background: white;
+$transition-base: all 0.2s ease-out;
+$transition-long: all 0.5s ease-out;
+$white: #fff;
+$black: #000;
+$light-grey: #ededed;
+$dark-grey: #333;
+$content-width: 70rem;
+
+@import "home";
+@import "menu";
+@import url("https://fonts.googleapis.com/css2?family=Concert+One&family=Raleway:wght@300;400;500;700&display=swap");
+
+
+* {
+  box-sizing: border-box;
+  padding: 0rem;
+  margin: 0rem;
+}
+
+body{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    display: flex;
     background: $background;
-    color: $color-secondary;
-    font-family: 'Jost', sans-serif;
-    line-height: 1rem;
+    font-family: "Raleway", sans-serif;
 }
 
 h1,
-h2,
+h2 {
+  font-weight: 200;
+  line-height: 3rem;
+  font-family: "Concert One";
+  font-size: 2.5rem;
+}
+
+
 h3 {
-    font-weight: 200;
-    line-height: 2rem;
+  line-height: 2rem;
+  letter-spacing: 1px;
+  color: $color-default;
 }
 
 a {
-    color: $color-secondary;
-    text-decoration: none;
-    transition: $transition-base;
-    &:hover {
-    //    color: $color-primary
-    }
+  color: $color-secondary;
+  text-decoration: none;
+  transition: $transition-base;
+  &:hover {
+    color: $color-primary;
+  }
 }
 
 p {
-    line-height: 1.8rem;
+    line-height: 2rem;
+    letter-spacing: 1px;
+    color: $color-default;
 }
 
-button {
-    background: $color-primary;
-    border: 1px solid $white;
-    font-size: 1.2rem;
-    padding: 10px 15px;
+.button {
+  background: $color-primary;
+  font-size: 1.2rem;
+  padding: 15px 15px;
+  color: $white;
+  transition: $transition-base;
+  margin-top: 1rem;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  a {
+    color: white;
+  }
+  &:hover {
+    background: $color-secondary;
     color: $white;
-    transition: $transition-base;
-    margin-top: 1rem;
-    width: 180px;
-    i {
-        transition: $transition-long;
-        padding-left: 1px;
-    }
-    &:hover {
-        background: $color-secondary;
-        border-color: $color-secondary;
-        color: $white;
-        i {
-            padding-left: 1rem;
-            color: white;
-        }
-    }
+  }
 }
-#button-back {
-  margin-right: 2rem;
-    &:hover{
-        background: $color-secondary;
-        border-color: $color-secondary;
-        i {
-            padding-left: 0rem;
-            padding-right: 1rem;
-        }
-    }
+
+
+@mixin columns () {
+  position: relative;
+  width: auto;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-content: stretch;
+  align-items: stretch;
+  flex-wrap: wrap;
+  margin: calc((2rem / 2) * -1);
+  .column {
+      margin: 1rem;
+      flex-basis: calc(50% - 2rem);
+      flex-grow: 0;
+      min-width: calc(50% - 2rem);
+      border: 1px solid $color-secondary;
+      padding: 1rem;
+  }
+}
+@mixin container-flex {
+  display: flex;
+  width: $content-width;
+  margin: 0 auto;
+  flex-direction: column;
+  padding: 7rem 0rem;
 }

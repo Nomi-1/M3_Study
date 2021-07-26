@@ -5,14 +5,16 @@
 
 // Menu Wrapper is the base of the menu
 .menu-wrapper {
+  background: white;
   padding: 1rem;
   width: 100%;
   display: flex;
   flex-basis: 100%;
   border-bottom: 1px solid $light-grey;
+  max-height: 100px;
 
   > .inner {
-    width: $content-width;
+    width: 70rem;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
@@ -41,6 +43,7 @@
         padding: 10px 15px;
         border: 1px solid $color-primary;
         transition: $transition-long;
+        text-align: center;
         &:hover,
         &.active {
           background: $color-primary;
