@@ -1,234 +1,112 @@
-(function() {
-	$(function() {
-		$('.menu-wrapper').each(function() {
-			initMenu($(this))
-		});
-	});
+/* ACTIVE CLASS */
+$(document).ready(function () {
+  var menu_links = $(".ed-menu li a");
+  var menu_active = 0;
+  var menu_object_top;
+  var menu_item = $(menu_links[0]);
 
-	// Make :active pseudo classes work on iOS
-	document.addEventListener("touchstart", function() {}, false);
+  menu_item.addClass("active");
 
-	var initMenu = function($menuWrapper) {
-		var $menu = $('.ed-menu');
-		var $menuLinks = $('a', $menu);
-		var $menuTrigger = $('.menu-trigger');
-		var $banner = $('.banner');
+  $(window).scroll(function () {
+    for (var i = 0; i < menu_links.length; i++) {
+      var link_active = $(menu_links[i]).attr("href");
 
-		var menuWrapperHeight = $menuWrapper.outerHeight();
-		var bannerHeight = $banner.length ? $banner.outerHeight() : 0;
-		var smoothScrollOffset = 20;
+      if ($(link_active).length) {
+        menu_object_top = $(link_active).offset().top;
+      }
 
-		toggleClassOnClick($menu, $menuTrigger, null, 'open');
-		activateSmoothScroll($menuLinks.add($('.scroll a')), smoothScrollOffset);
-		addClassOnVisibleLinkTargets($menuLinks, 'active', 2 / 3);
-		handleSticky($menuWrapper, 'sticky', $banner);
-	};
+      var scroll_top = $(window).scrollTop();
+      var getdif = Math.abs(scroll_top - menu_object_top);
+      if (i === 0) {
+        menu_active = getdif;
+        menu_item = $(menu_links[i]);
+        $(".ed-menu li a").removeClass("active");
+        menu_item.addClass("active");
+      } else {
+        if (getdif < menu_active || getdif === menu_active) {
+          menu_active = getdif;
+          menu_item = $(menu_links[i]);
+          $(".ed-menu li a").removeClass("active");
+          menu_item.addClass("active");
+        }
+      }
+    }
+  });
+});
 
-	/**
-	 * Observe element's height changes and reload the initMenu() function
-	 *
-	 * param {HTMLElement} elm Element to observe
-	 * param {function} callback to call when elmement's height changed
-	 */
-	var observeHeightChange = function(elm, callback) {
-	    if (!('ResizeObserver' in window) || elm == null) return;
-	    
-	    var ro = new ResizeObserver(callback);
-		ro.observe(elm);
-	}
+/* SMOOTH SCROLL */
+$(function () {
+  $("a[href*=\\#]")
+    .stop()
+    .click(function () {
+      if (
+        location.pathname.replace(/^\//, "") ==
+          this.pathname.replace(/^\//, "") ||
+        location.hostname == this.hostname
+      ) {
+        var hash = this.hash;
+        var target = $(this.hash);
+        if (target.length) {
+          var margin_top = target.offset().top;
+          $([document.documentElement, document.body]).animate(
+            { scrollTop: margin_top },
+            1000
+          );
+        }
+      }
+    });
+});
 
-	/**
-	 * Toggles class on a target when a trigger is clicked
-	 * 
-	 * param {jQuery} $target The target to apply the CSS class to
-	 * param {jQuery} $trigger The Trigger
-	 * param {jQuery} $closeTrigger Optional close trigger
-	 * param {string} cssClass CSS Class to toggle on the target
-	 */
+/* MOBILE TOGGLE */
+(function () {
+  $(function () {
+    $(".menu-wrapper").each(function () {
+      initMenu($(this));
+    });
+  });
 
-	var toggleClassOnClick = function($target, $trigger, $closeTrigger, cssClass) {
-		// Reset in case class "open" was saved accidentally
-		$target.removeClass(cssClass);
-		$trigger.removeClass(cssClass);
+  // Make :active pseudo classes work on iOS
+  document.addEventListener("touchstart", function () {}, false);
 
-		// Click on trigger toggles class "open"
-		$trigger.off('.toggle').on('click.toggle', function() {
-			$(this).toggleClass(cssClass);
-			$target.toggleClass(cssClass);
-		});
+  var initMenu = function ($menuWrapper) {
+    var $menu = $(".ed-menu");
+    var $menuTrigger = $(".menu-trigger");
+    toggleClassOnClick($menu, $menuTrigger, null, "open");
+  };
 
-		// Close target when link inside is clicked
-		$target.find('a').click(function() {
-			$target.removeClass(cssClass);
-			$trigger.removeClass(cssClass);
-		});
+  /*
+   * Toggles class on a target when a trigger is clicked
+   */
 
-		if (!$closeTrigger || !$closeTrigger.length) {
-			return;
-		}
+  var toggleClassOnClick = function (
+    $target,
+    $trigger,
+    $closeTrigger,
+    cssClass
+  ) {
+    // Reset in case class "open" was saved accidentally
+    $target.removeClass(cssClass);
+    $trigger.removeClass(cssClass);
 
-		$closeTrigger.click(function() {
-			$target.removeClass(cssClass);
-			$trigger.removeClass(cssClass);
-		});
-	};
+    // Click on trigger toggles class "open"
+    $trigger.off(".toggle").on("click.toggle", function () {
+      $(this).toggleClass(cssClass);
+      $target.toggleClass(cssClass);
+    });
 
-	/**
-	 * Smooth scroll to link targets
-	 * 
-	 * param {jQuery} $scrollLinks The links
-	 * param {jQuery} scrollOffset Offset to subtract from the scroll target position (e.g. for fixed positioned elements like a menu)
-	 */
-	var activateSmoothScroll = function($scrollLinks, scrollOffset) {
-		if (typeof scrollOffset === 'undefined') {
-			scrollOffset = 0;
-		}
+    // Close target when link inside is clicked
+    $target.find("a").click(function () {
+      $target.removeClass(cssClass);
+      $trigger.removeClass(cssClass);
+    });
 
-		var determineTarget = function($trigger, hash) {
-			if (hash == '#!next') {
-				return $trigger.closest('.ed-element').next();
-			}
+    if (!$closeTrigger || !$closeTrigger.length) {
+      return;
+    }
 
-			return $(hash);
-		}
-
-		$scrollLinks.click(function(e) {
-			var $target = determineTarget($(this), this.hash);
-			if (!$target.length) return;
-			e.preventDefault();
-
-			viewport.scrollTo($target, 'top', 500, 0);
-
-		});
-	};
-
-	/**
-	 * We are using the fill property on an element to pass user's choices from CSS to JavaScript
-	 * 
-	 * param {jQuery} $element
-	 */
-	var getStickyMode = function($element) {
-		return 'sticky_banner';
-	};
-
-	/**
-	 * Adds a class to an element when not currently visible
-	 * 
-	 * param {jQuery} $element The element to handle stickyness for
-	 * param {string} cssClass The actual CSS class to be applied to the element when it's above a certain scroll position
-	 * param {jQuery} $banner A banner to reference the scroll position to
-	 */
-	var handleSticky = function($element, cssClass, $banner) {
-		var triggerPos = 0,
-			offset = 0;
-		var menuWrapperHeight = $element.outerHeight();
-		var mode;
-		var prevScroll = 0;
-		$element.removeClass(cssClass);
-		var updateOffset = function() {
-			mode = getStickyMode($element);
-			if (!$element.hasClass(cssClass)) {
-				offset = $element.offset().top;
-				menuWrapperHeight = $element.outerHeight();
-			}
-			if (mode === 'sticky_banner' && !$banner.length) {
-				mode = 'sticky_menu';
-			}
-			if (mode === 'sticky_banner') {
-				triggerPos = $banner.offset().top + ($banner.length ? $banner.outerHeight() : $element.outerHeight());
-			}
-			if (mode === 'sticky_menu' || mode === 'sticky_reverse') {
-				triggerPos = offset + $element.outerHeight();
-			}
-			if (mode === 'sticky_instant') {
-				triggerPos = offset;
-			}
-		}
-		viewport.observe('resize', updateOffset);
-		viewport.observe('animation.end', updateOffset);
-		observeHeightChange($element[0], updateOffset);
-		updateOffset();
-
-		var toggleSpacer = function(toggle) {
-			document.body.style.setProperty('--spacer-height', toggle ? menuWrapperHeight + 'px' : '');
-		};
-
-		var handleScroll = function() {
-			if (!$element.length || mode === 'sticky_none') return;
-
-			var isReverse = mode === 'sticky_reverse',
-				curScroll = viewport.getScrollTop();
-
-			if (triggerPos <= curScroll && (!isReverse || prevScroll > curScroll)) {
-				$element.addClass(cssClass);
-				toggleSpacer(true);
-			} else {
-				$element.removeClass(cssClass);
-				toggleSpacer(false);
-			}
-
-			prevScroll = curScroll;
-		};
-		viewport.observe('scroll', handleScroll);
-		handleScroll();
-	};
-
-	/**
-	 * Adds a class to links whose target is currently inside the viewport
-	 * 
-	 * param {jQuery} $links Link(s) to be observed
-	 * param {string} cssClass CSS Class to be applied
-	 * param {float} sectionViewportRatio Ratio by which the target should be within the viewport
-	 */
-	var addClassOnVisibleLinkTargets = function($links, cssClass, sectionViewportRatio) {
-		if (typeof sectionViewportRatio === 'undefined') {
-			sectionViewportRatio = 1 / 2;
-		}
-
-		var menuTargets = [];
-		var activeLink = $links.filter('.active');
-
-		var links = $links.filter(function() {
-			var $target = $(this.hash);
-			if (!$target.length) {
-				return false;
-			}
-
-			// Cache offset position to improve performance (update on resize)		
-			var updateOffset = function() {
-				$target.data('offset', $target.offset().top);
-			};
-
-			viewport.observe('resize', updateOffset);
-			viewport.observe('animation.end', updateOffset);
-			updateOffset();
-
-			menuTargets.push($target);
-			return true;
-		});
-
-		// No hash links found, so don't handle it at all
-		if (!links.length) {
-			return;
-		}
-
-		var checkVisibility = function() {
-			$links.removeClass('active');
-
-			// Check section position reversely
-			for (var i = menuTargets.length - 1; i >= 0; i--) {
-				var desiredScrollPosition = menuTargets[i].data('offset') - viewport.getHeight() * (1 - sectionViewportRatio);
-				if (viewport.getScrollTop() >= desiredScrollPosition) {
-					links.eq(i).addClass(cssClass);
-					return;
-				}
-			}
-
-			// Fallback to originally active item
-			activeLink.addClass(cssClass);
-		};
-
-		viewport.observe('scroll', checkVisibility);
-		checkVisibility();
-	};
+    $closeTrigger.click(function () {
+      $target.removeClass(cssClass);
+      $trigger.removeClass(cssClass);
+    });
+  };
 })();
