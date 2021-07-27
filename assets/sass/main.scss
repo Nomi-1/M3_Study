@@ -116,6 +116,23 @@ p {
     min-width: calc(50% - 2rem);
   }
 }
+.columns-three{
+  position: relative;
+  width: auto;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-content: stretch;
+  align-items: stretch;
+  flex-wrap: wrap;
+  margin: calc((2rem / 2) * -1);
+  .column {
+    margin: 1rem;
+    flex-basis: calc(33% - 2rem);
+    flex-grow: 0;
+    min-width: calc(33% - 2rem);
+  }
+}
 .container-flex {
   display: flex;
   width: $content-width;

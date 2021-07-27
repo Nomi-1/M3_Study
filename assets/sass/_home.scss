@@ -44,41 +44,56 @@
     position: relative;
     width: 30%;
     padding: 2rem;
-    border: 2px solid $color-primary; 
+    border: 2px solid $color-primary;
     justify-content: center;
-    h2, p {
+    h2,
+    p {
       text-align: center;
     }
-    .button{
+    .button {
       margin: 0 auto;
     }
   }
 }
 
-.gallery{
- display: flex;
- flex-direction: row;
+.gallery {
+  display: flex;
+  flex-direction: row;
   height: 20rem;
   overflow: hidden;
-  a{
+  a {
     max-width: 20%;
   }
-  img{
+  img {
     height: 100%;
     width: 100%;
     object-fit: cover;
     object-position: center center;
   }
 }
-.menu .column{
-  img{
+.menu .column {
+  img {
     max-width: 100%;
   }
-  h3{text-transform: uppercase;}
-  .price{
+  h3 {
+    text-transform: uppercase;
+  }
+  .price {
     color: $color-primary;
     font-weight: 700;
     font-size: 15px;
     text-align: right;
+  }
+}
+.kontakt a {
+  &:not(:last-child) {
+    margin-right: 1rem;
+  }
+  &:hover i {
+    color: $dark-grey;
+  }
+  i {
+    font-size: 2rem;
+    transition: $transition-base;
   }
 }
