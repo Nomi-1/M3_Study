@@ -93,15 +93,24 @@
   text-align: right;
 }
 
-.kontakt a:not(:last-child) {
+.address a {
+  color: #444;
+  transition: all 0.2s ease-out;
+}
+
+.address a:hover {
+  color: #79ba11;
+}
+
+.social a:not(:last-child) {
   margin-right: 1rem;
 }
 
-.kontakt a:hover i {
+.social a:hover i {
   color: #333;
 }
 
-.kontakt a i {
+.social a i {
   font-size: 2rem;
   transition: all 0.2s ease-out;
 }
@@ -280,6 +289,14 @@
     right: 0%;
     transform: translate3d(0, 0, 0);
   }
+}
+
+.page-id-order {
+  background: red !important;
+}
+
+.page-id-legal {
+  background: green !important;
 }
 
 * {

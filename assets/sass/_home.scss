@@ -85,7 +85,14 @@
     text-align: right;
   }
 }
-.kontakt a {
+.address a {
+  color: $color-default;
+  transition: $transition-base;
+  &:hover {
+    color: $color-primary;
+  }
+}
+.social a {
   &:not(:last-child) {
     margin-right: 1rem;
   }
