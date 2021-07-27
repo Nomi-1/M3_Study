@@ -11,7 +11,6 @@
   flex-direction: column;
   .banner-content {
     display: flex;
-    width: 300px;
     height: 100%;
     margin: 0 auto;
     width: $content-width;
@@ -29,13 +28,7 @@
     }
   }
 }
-.about {
-  display: flex;
-  width: $content-width;
-  margin: 0 auto;
-  flex-direction: column;
-  padding: 7rem 0rem;
-}
+
 .cta {
   background-image: url("../images/background_home_5.jpg");
   background-attachment: fixed;
@@ -46,13 +39,10 @@
   width: 100%;
 
   > .inner {
-    display: flex;
     background: rgba(white, 0.85);
     padding: 1rem;
     position: relative;
     width: 30%;
-    margin: 0 auto;
-    flex-direction: column;
     padding: 2rem;
     border: 2px solid $color-primary; 
     justify-content: center;
@@ -64,12 +54,9 @@
     }
   }
 }
-.menu{
-  padding: 7rem 0rem;
-  width: $content-width;
-}
+
 .gallery{
-  display: flex;
+ display: flex;
  flex-direction: row;
   height: 20rem;
   overflow: hidden;
@@ -81,5 +68,17 @@
     width: 100%;
     object-fit: cover;
     object-position: center center;
+  }
+}
+.menu .column{
+  img{
+    max-width: 100%;
+  }
+  h3{text-transform: uppercase;}
+  .price{
+    color: $color-primary;
+    font-weight: 700;
+    font-size: 15px;
+    text-align: right;
   }
 }

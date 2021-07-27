@@ -14,7 +14,6 @@
 
 .banner .banner-content {
   display: flex;
-  width: 300px;
   height: 100%;
   margin: 0 auto;
   width: 70rem;
@@ -32,14 +31,6 @@
   width: 500px;
 }
 
-.about {
-  display: flex;
-  width: 70rem;
-  margin: 0 auto;
-  flex-direction: column;
-  padding: 7rem 0rem;
-}
-
 .cta {
   background-image: url("../images/background_home_5.jpg");
   background-attachment: fixed;
@@ -51,13 +42,10 @@
 }
 
 .cta > .inner {
-  display: flex;
   background: rgba(255, 255, 255, 0.85);
   padding: 1rem;
   position: relative;
   width: 30%;
-  margin: 0 auto;
-  flex-direction: column;
   padding: 2rem;
   border: 2px solid #79ba11;
   justify-content: center;
@@ -69,11 +57,6 @@
 
 .cta > .inner .button {
   margin: 0 auto;
-}
-
-.menu {
-  padding: 7rem 0rem;
-  width: 70rem;
 }
 
 .gallery {
@@ -92,6 +75,21 @@
   width: 100%;
   object-fit: cover;
   object-position: center center;
+}
+
+.menu .column img {
+  max-width: 100%;
+}
+
+.menu .column h3 {
+  text-transform: uppercase;
+}
+
+.menu .column .price {
+  color: #79ba11;
+  font-weight: 700;
+  font-size: 15px;
+  text-align: right;
 }
 
 /*
@@ -152,6 +150,12 @@
 .menu-wrapper .ed-menu ul a:hover, .menu-wrapper .ed-menu ul a.active {
   background: #79ba11;
   color: white;
+}
+
+.menu-wrapper .ed-menu ul .hightlight {
+  background: black;
+  color: white;
+  border: black;
 }
 
 .menu-wrapper .mobile-cont {
@@ -356,4 +360,31 @@ p {
 .spacer {
   width: 100%;
   height: 2rem;
+}
+
+.columns {
+  position: relative;
+  width: auto;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-content: stretch;
+  align-items: stretch;
+  flex-wrap: wrap;
+  margin: calc((2rem / 2) * -1);
+}
+
+.columns .column {
+  margin: 1rem;
+  flex-basis: calc(50% - 2rem);
+  flex-grow: 0;
+  min-width: calc(50% - 2rem);
+}
+
+.container-flex {
+  display: flex;
+  width: 70rem;
+  margin: 0 auto;
+  flex-direction: column;
+  padding: 7rem 0rem;
 }
