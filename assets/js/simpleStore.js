@@ -403,7 +403,7 @@ var simpleStore = {
         // Handle shame_dp
         $('.shame_dp_accept').on('click', function (e) {
             e.preventDefault();
-            simpleCart.add({name: "Fake Green Tax", description: "Added to annoy you", price : 1, quantity: 1, thumb: "https://upload.wikimedia.org/wikipedia/commons/2/24/Blue_Tshirt.j"})
+            simpleCart.add({name: simpleCart.getGreenTaxName(), description: "Added to annoy you", price : 1, quantity: 1, thumb: "https://upload.wikimedia.org/wikipedia/commons/2/24/Blue_Tshirt.j"})
             $('.shame_dp').html('<h4>Thank you for saving our planet!</h4>');
         });
 

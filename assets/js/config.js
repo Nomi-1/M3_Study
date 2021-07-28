@@ -18,9 +18,8 @@ $(function() {
 
 	    // how simpleCart should checkout, see the checkout reference for more info
 	    checkout: {
-	        type: "SendForm" ,
-			url: "http://localhost",
-			method: "GET",
+	        type: "SendDatabase" ,
+			url: "https://google.com",
 	    },
 
 	    // set the currency, see the currency reference for more info
