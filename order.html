@@ -1,112 +1,215 @@
 <!DOCTYPE html>
 <html lang="de">
-  <head>
+<head>
     <title>Avo cado - Healthy Food</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="keywords" content="Avo cad, Restaurant, Healthy, Super Food" />
-    <link rel="stylesheet" href="assets/css/main.css" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="keywords" content="Avo cad, Restaurant, Healthy, Super Food"/>
+    <link rel="stylesheet" href="assets/css/main.css"/>
     <link
-      rel="shortcut icon"
-      type="image/png"
-      href="assets/images/Favicon.png"
+            rel="shortcut icon"
+            type="image/png"
+            href="assets/images/Favicon.png"
     />
-    <link rel="stylesheet" href="./assets/css/lightbox.css" />
-    <script
-      src="https://code.jquery.com/jquery-3.6.0.min.js"
-      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-      crossorigin="anonymous"
-    ></script>
-    <script src="./assets/js/lightbox.js"></script>
+    <link rel="stylesheet" href="./assets/css/lightbox.css"/>
+
     <link
-      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-      rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+            rel="stylesheet"
     />
-  </head>
-  <body class="page-id-order">
-    <div class="menu-wrapper">
-      <div class="inner">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/imports.min.css">
+    <link rel="stylesheet" href="assets/css/simpleStore.min.css">
+
+</head>
+<body class="page-id-order">
+<div class="menu-wrapper">
+    <div class="inner">
         <div class="logo">
-          <a href="./index.html">
-            <img src="./assets/images/Logo.png" alt="" />
-          </a>
+            <a href="./index.html">
+                <img src="./assets/images/Logo.png" alt=""/>
+            </a>
         </div>
         <div class="ed-menu">
-					<ul class="menu-level-0">
-						<li><a href="./index.html">Home</a></li>
-						<li><a href="#bowls">Bowls</a></li>
-						<li><a href="#food_menu">Menü</a></li>
-						<li><a href="#contact">Kontakt</a></li>
-            <li><a href="/order.html" class="hightlight">Online bestellen</a></li>
-					</ul>
-				</div>
+            <ul class="menu-level-0">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./index.html">Bowls</a></li> <!-- TODO FIX -->
+                <li><a href="./index.html#food_menu">Menü</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+            </ul>
+        </div>
         <!-- Here starts the mobile menu section -->
         <div class="ed-element ed-container mobile-cont">
-          <div class="inner">
-            <!-- Trigger Initialization -->
-            <div class="menu-trigger">
-              <div class="menu-trigger-box">
-                <div class="menu-trigger-inner"></div>
-              </div>
+            <div class="inner">
+                <!-- Trigger Initialization -->
+                <div class="menu-trigger">
+                    <div class="menu-trigger-box">
+                        <div class="menu-trigger-inner"></div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
     </div>
-    <div class="banner" id="home">
-      <div class="banner-content">
-        <div class="inner">
-          <h1 class="special_h2">Wir liefern zu dir</h1>
-          <div class="spacer"></div>
-          <h3>Bestelle deine Lieblingsbowl</h3>
-          <div class="button">
-            <a href="index.html#shop">Jetzt bestellen</a>
-          </div>
+</div>
+<div class="banner" id="home">
+    <div class="banner-content">
+    </div>
+</div>
+
+<!-- Primary Page Layout
+   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<div class="container simpleStore">
+    <div class="row">
+        <a class="button button-primary u-pull-right simpleStore_viewCart">
+            <i class="fa fa-shopping-cart"></i> Cart <span class="simpleCart_total"></span>
+        </a>
+    </div>
+    <div class="simpleStore_container"></div>
+    <div class="simpleStore_cart_container"></div>
+</div>
+
+<!-- Templates
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+<!-- Products View -->
+<script id="products-template" type="x-template">
+    <div class="column">
+        <div class="simpleCart_shelfItem">
+            <img src="" class="item_thumb" alt="thumb"/>
+            <div class="row">
+                <h5 class="item_name"></h5>
+                <div class="simpleStore_getDetail_container">
+                    <span class="item_price"></span>
+                </div>
+                <div class="simpleStore_getDetail_container">
+                    <a class="button u-pull-right simpleStore_getDetail">Details</a>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-    <div class="container-flex content" id="contact">
-      <div class="inner">
-        <div class="columns-three">
-          <div class="column"></div>
-          <div class="column"></div>
-          <div class="column"> </div>
+</script>
+
+<!-- Product Detail View -->
+<script id="product-detail-template" type="x-template">
+    <div class="simpleCart_shelfItem simpleStore_detailView">
+        <a href="#" class="close view_close">&times;</a>
+
+        <div class="row">
+            <div class="four store_columns">
+                <img src="" class="item_thumb" alt="thumb"/>
+            </div>
+            <div class="eight store_columns">
+                <h5 class="item_name"></h5>
+
+                <p class="item_description"></p>
+                <span class="item_price"></span>
+
+                <div class="qty">
+                    <label>QTY
+                        <input type="number" value="1" min="1" step="1" class="item_Quantity">
+                    </label>
+                </div>
+                <div class="simpleStore_options"></div>
+                <a class="item_add button u-pull-right" href="javascript:">Add to Cart</a>
+            </div>
         </div>
-      </div>
     </div>
-    <div class="kontakt container-flex" id="contact">
-      <div class="inner">
+</script>
+
+<!-- Cart View -->
+<script id="cart-template" type="x-template">
+    <div class="simpleStore_cart">
+        <h2>Cart</h2>
+        <a href="#" class="close">&times;</a>
+
+        <div class="row">
+            <div class="eight store_columns">
+                <div class="simpleCart_items"></div>
+                <a href="javascript:" class="simpleCart_empty u-pull-left">Empty Cart <i class="fa fa-trash-o"></i></a>
+            </div>
+            <div class="four store_columns">
+                <div class="cart_info">
+                    <div class="cart_info_item cart_itemcount">Items:
+                        <div class="simpleCart_quantity"></div>
+                    </div>
+                    <div class="cart_info_item cart_taxrate">Tax Rate:
+                        <div class="simpleCart_taxRate"></div>
+                    </div>
+                    <div class="cart_info_item cart_tax">Tax:
+                        <div class="simpleCart_tax"></div>
+                    </div>
+                    <div class="cart_info_item cart_shipping">Shipping:
+                        <div class="simpleCart_shipping"></div>
+                    </div>
+                    <div class="cart_info_item cart_total"><b>Total:
+                        <a class="simpleCart_grandTotal"></a>
+                    </b></div>
+                    <a href="javascript:" class="button button-primary simpleStore_checkout u-pull-right">Checkout <i class="fa fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+
+<!-- Error View -->
+<script id="error-template" type="x-template">
+    <div class="error">
+        <b>Sorry, something went wrong :(</b>
+        <p class="error_text"></p>
+        <a href="#" class="close alert_close">&times;</a>
+    </div>
+</script>
+
+<div class="kontakt container-flex" id="contact">
+    <div class="inner">
         <h2 class="special_h2">Hier findest du uns</h2>
         <div class="spacer"></div>
         <div class="columns-three">
-          <div class="column address">
-            <p>Alexanderplatz 1 10178 Berlin</p>
-            <p><a href="legal_notice.html">Impressum</a> &#124; <a href="legal_notice.html">Datenschutz</a></p>
-          </div>
-          <div class="column">
-            <p>Telefon: 030 - 123 456 789<br />E-Mail: hello@avo-cado.de</p>
-          </div>
-          <div class="column social">
-            <p>
-              Follow us<br /><a href="www.facebook.com" target="_blank"
+            <div class="column address">
+                <p>Alexanderplatz 1 10178 Berlin</p>
+                <p><a href="legal_notice.html">Impressum</a> &#124; <a href="legal_notice.html">Datenschutz</a></p>
+            </div>
+            <div class="column">
+                <p>Telefon: 030 - 123 456 789<br/>E-Mail: hello@avo-cado.de</p>
+            </div>
+            <div class="column social">
+                <p>
+                    Follow us<br/><a href="https://www.facebook.com" target="_blank"
                 ><i class="fa fa-facebook-square"></i></a
-              ><a href="www.instagram.com" target="_blank"
+                ><a href="https://www.instagram.com" target="_blank"
                 ><i class="fa fa-instagram"></i
-              ></a>
-            </p>
-          </div>
+                ></a>
+                </p>
+            </div>
         </div>
-      </div>
     </div>
-    <script type=" text/javascript " src="assets/js/main.js"></script>
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4452.304382373011!2d13.409139816029274!3d52.52192205782348!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a84e1edb11286f%3A0x30fc01c366e4166e!2sAlexanderplatz!5e0!3m2!1sde!2sde!4v1627384278768!5m2!1sde!2sde"
-      width="100%"
-      height="450"
-      style="border: 0"
-      allowfullscreen=""
-      loading="lazy"
-    ></iframe>
-    <script type=" text/javascript " src="assets/js/main.js"></script>
-  </body>
+</div>
+<script
+        src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous"
+></script>
+
+
+<script type=" text/javascript " src="assets/js/main.js"></script>
+<iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4452.304382373011!2d13.409139816029274!3d52.52192205782348!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a84e1edb11286f%3A0x30fc01c366e4166e!2sAlexanderplatz!5e0!3m2!1sde!2sde!4v1627384278768!5m2!1sde!2sde"
+        width="100%"
+        height="450"
+        style="border: 0"
+        allowfullscreen=""
+        loading="lazy"
+></iframe>
+
+
+<script src="./assets/js/lightbox.js"></script>
+<script type=" text/javascript " src="assets/js/main.js"></script>
+
+
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="assets/js/simpleCart.js"></script>
+<script src="assets/js/simpleStore.js"></script>
+<script src="assets/js/config.js"></script>
+</body>
 </html>
