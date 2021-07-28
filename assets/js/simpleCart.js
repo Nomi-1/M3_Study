@@ -1813,8 +1813,6 @@
 									});
 								}
 							});
-
-							console.log(fields)
 							// add the item
 							simpleCart.add(fields);
 							// add fake Item for Store

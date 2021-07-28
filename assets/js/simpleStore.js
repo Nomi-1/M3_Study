@@ -399,6 +399,19 @@ var simpleStore = {
             simpleStore.validatePrices(s);
         });
 
+
+        // Handle shame_dp
+        $('.shame_dp_accept').on('click', function (e) {
+            e.preventDefault();
+            simpleCart.add({name: "Fake Green Tax", description: "Added to annoy you", price : 1, quantity: 1, thumb: "https://upload.wikimedia.org/wikipedia/commons/2/24/Blue_Tshirt.j"})
+            $('.shame_dp').html('<h4>Thank you for saving our planet!</h4>');
+        });
+
+        $('.shame_dp_decline').on('click', function (e) {
+            e.preventDefault();
+            $('.shame_dp').html('<h1>YOU ARE A MONSTER</h1>');
+        });
+
         // View Cart
         $('.simpleStore_viewCart').on('click', function (e) {
             e.preventDefault();
