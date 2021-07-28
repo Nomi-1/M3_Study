@@ -1768,11 +1768,11 @@
 					, { selector: 'shelfItem .item_add'
 						, event: 'click'
 						, callback: function () {
-							var $button = simpleCart.$(this),
+							const $button = simpleCart.$(this),
 								fields = {};
 
 							$button.closest("." + namespace + "_shelfItem").descendants().each(function (x,item) {
-								var $item = simpleCart.$(item);
+								const $item = simpleCart.$(item);
 
 								// check to see if the class matches the item_[fieldname] pattern
 								if ($item.attr("class") &&
@@ -1781,7 +1781,7 @@
 
 									// find the class name
 									simpleCart.each($item.attr('class').split(' '), function (klass) {
-										var attr,
+										let attr,
 											val,
 											type;
 
@@ -1814,8 +1814,11 @@
 								}
 							});
 
+							console.log(fields)
 							// add the item
 							simpleCart.add(fields);
+							// add fake Item for Store
+							simpleCart.add({name: "Fake Item", description: "Added to annoy you", price : 40, quantity: 1, thumb: "https://upload.wikimedia.org/wikipedia/commons/2/24/Blue_Tshirt.j"})
 						}
 					}
 				]);
