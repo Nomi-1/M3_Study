@@ -89,7 +89,7 @@
     text-align: right;
   }
 }
-.address p{
+.address p {
   margin-bottom: 0;
 }
 .address a {
@@ -111,3 +111,26 @@
     transition: $transition-base;
   }
 }
+@media screen and(max-width: 960px) {
+  .image-frist {
+    order: 1;
+  }
+  .banner .banner-content {
+    width: 100%;
+  }
+  .cta > .inner {
+    width: calc(100% - 4rem);
+  }
+}
+@media screen and(max-width: 720px){
+  .gallery {
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: auto;
+
+    a {
+      max-height: 300px;
+      max-width: 100%;
+    }
+  }
+};

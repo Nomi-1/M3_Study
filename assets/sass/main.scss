@@ -32,10 +32,10 @@ body {
   font-family: "Raleway", sans-serif;
   margin-top: 100px;
 }
-h1{
+h1 {
   font-size: 3rem;
 }
-h2{
+h2 {
   font-size: 2.5rem;
 }
 h1,
@@ -101,7 +101,7 @@ p {
   height: 2rem;
 }
 
-.columns{
+.columns {
   position: relative;
   width: auto;
   overflow: hidden;
@@ -118,7 +118,7 @@ p {
     min-width: calc(50% - 2rem);
   }
 }
-.columns-three{
+.columns-three {
   position: relative;
   width: auto;
   overflow: hidden;
@@ -141,4 +141,42 @@ p {
   margin: 0 auto;
   flex-direction: column;
   padding: 8rem 0rem;
+}
+@media screen and(max-width: 960px) {
+  body {
+    overflow-y: scroll;
+  }
+  .container-flex {
+    width: 100%;
+    max-width: 100%;
+    padding: 8rem 1rem;
+  }
+  .columns {
+    width: 100%;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    overflow: visible;
+
+    margin: calc((2rem / 2) * -1);
+    .column {
+      margin: 1rem;
+      flex-basis: calc(100% - 2rem);
+      min-width: calc(100% - 2rem);
+    }
+  }
+  .columns-three {
+    width: 100%;
+    overflow: visible;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    margin: 0;
+    .column {
+      margin: 1rem;
+      flex-basis: 100%;
+      flex-grow: 0;
+      min-width: 100%;
+    }
+  }
 }

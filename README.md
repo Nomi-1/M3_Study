@@ -1,3 +1,1 @@
-This is a study project
-
-Struktur ist fast soweit, dass wir daran arbeiten können - mobile ist noch nicht ganz durch - bin aber dran!
+This is a study project for "M3 Business and Social Aspects of Computing" from HTW Berlin.
