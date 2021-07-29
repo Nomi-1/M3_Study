@@ -146,6 +146,9 @@
     max-height: 300px;
     max-width: 100%;
   }
+  .cta > .inner {
+    width: calc(100% - 3rem);
+  }
 }
 
 /*
@@ -530,12 +533,12 @@ p {
     align-content: center;
     align-items: center;
     overflow: visible;
-    margin: calc((2rem / 2) * -1);
+    margin: 0;
   }
   .columns .column {
-    margin: 1rem;
-    flex-basis: calc(100% - 2rem);
-    min-width: calc(100% - 2rem);
+    margin: 0rem;
+    flex-basis: 100;
+    min-width: 0;
   }
   .columns-three {
     width: 100%;
@@ -550,5 +553,11 @@ p {
     flex-basis: 100%;
     flex-grow: 0;
     min-width: 100%;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .container-flex {
+    padding: 4rem 1rem;
   }
 }

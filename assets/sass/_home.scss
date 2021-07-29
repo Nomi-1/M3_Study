@@ -133,4 +133,7 @@
       max-width: 100%;
     }
   }
+  .cta > .inner {
+    width: calc(100% - 3rem);
+  }
 };
