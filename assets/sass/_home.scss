@@ -54,6 +54,10 @@
       margin: 0 auto;
     }
   }
+  .special_h2:before {
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
 
 .gallery {
@@ -85,6 +89,9 @@
     text-align: right;
   }
 }
+.address p{
+  margin-bottom: 0;
+}
 .address a {
   color: $color-default;
   transition: $transition-base;
@@ -100,7 +107,7 @@
     color: $dark-grey;
   }
   i {
-    font-size: 2rem;
+    font-size: 32px !important;
     transition: $transition-base;
   }
 }

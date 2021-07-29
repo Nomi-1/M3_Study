@@ -1,6 +1,6 @@
 /* ACTIVE CLASS */
 $(document).ready(function () {
-  var menu_links = $(".ed-menu li a");
+  var menu_links = $('.ed-menu li a[href^="#"]');
   var menu_active = 0;
   var menu_object_top;
   var menu_item = $(menu_links[0]);
@@ -9,7 +9,7 @@ $(document).ready(function () {
 
   $(window).scroll(function () {
     for (var i = 0; i < menu_links.length; i++) {
-      var link_active = $(menu_links[i]).attr("href");
+     var link_active = $(menu_links[i]).attr('href');
 
       if ($(link_active).length) {
         menu_object_top = $(link_active).offset().top;

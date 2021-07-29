@@ -1,33 +1,39 @@
 {
 	"products" : [
 		{
-			"name" : "Awesome T-shirt",
-			"price" : "35.99",
-			"options" : [
-				{ "Size" : "Small,Medium,Large" }
-			],
-			"image" : "http://upload.wikimedia.org/wikipedia/commons/c/c6/Grey_Tshirt.jpg",
-			"description" : "This is a very awesome grey T-shirt"
+			"name" : "Avocado Wasabi Toast",
+			"price" : "5.80",
+			"options" : [],
+			"image" : "../assets/images/background_home_4.jpg",
+			"description" : "Avocado mit Hummus, gemischte Greens, Hibiscus, Wasabi-Dressing und Sesam dazu regonales Vollkorn Brot"
 		},
 		{
-			"name" : "Cool T-shirt",
-			"price" : "15.99",
-			"options" : [
-				{ "Size" : "Small,Medium,Large" },
-				{ "Color" : "Blue,Red" },
-			    { "OneOfAKind" : true }
-			],
-			"image" : "http://upload.wikimedia.org/wikipedia/commons/2/24/Blue_Tshirt.jpg",
-			"description" : "This is a really cool blue T-shirt"
+			"name" : "Shakshuka",
+			"price" : "7.50",
+			"options" : [],
+			"image" : "../assets/images/shakshuka.jpg",
+			"description" : "Shakshuka mit Mojo, Kokosjoghurt, Ei, Granatapfel, Harissa und Koriander dazu selbst gebackenes Sauerteig-Pita "
 		},
 		{
-			"name" : "Fun T-shirt",
-			"price" : "15.99",
-			"options" : [
-				{ "Size" : "Small,Medium,Large" }
-			],
-			"image" : "http://upload.wikimedia.org/wikipedia/commons/c/c6/Grey_Tshirt.jpg",
+			"name" : "Acai Bowl",
+			"price" : "8.00",
+			"options" : [],
+			"image" : "../assets/images/background_order.jpg",
+			"description" : "mit Acai, Bananen, Himbeeren, Blaubeeren, Erdbeeren, Erdnussbutter, Datteln, Cashews und glutenfreiem Granola belegt"
+		},
+		{
+			"name" : "Buddha Bowl",
+			"price" : "12.99",
+			"options" : [],
+			"image" : "../assets/images/img_4.jpg",
 			"description" : "This is another fun grey T-shirt"
+		},
+		{
+			"name" : "Garden Salad",
+			"price" : "11.99",
+			"options" : [],
+			"image" : "../assets/images/background_home_3.jpg",
+			"description" : "regionale Greens, Kirschtomaten, Blaubeeren, Zucchini, Rote Beete, Fenchel, Karotte, Gurke, Hanfsamen und Weizengras-Dressing dazu hausgemachtes Brot"
 		}
 	]
 }

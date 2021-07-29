@@ -8,7 +8,7 @@ $white: #fff;
 $black: #000;
 $light-grey: #ededed;
 $dark-grey: #333;
-$content-width: 70rem;
+$content-width: 1120px;
 
 @import "home";
 @import "menu";
@@ -140,5 +140,5 @@ p {
   width: $content-width;
   margin: 0 auto;
   flex-direction: column;
-  padding: 7rem 0rem;
+  padding: 8rem 0rem;
 }

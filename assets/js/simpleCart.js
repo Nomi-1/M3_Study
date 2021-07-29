@@ -13,8 +13,8 @@
 
 (function (window, document) {
     /*global HTMLElement */
-    const ADD_BASKET_NAME = "Fake Item";
-    const GREEN_TAX_NAME = "Green Tax Item"
+    const ADD_BASKET_NAME = "Organic Farming";
+    const GREEN_TAX_NAME = "Be Green"
 
     var typeof_string = typeof "",
         typeof_undefined = typeof undefined,
@@ -103,18 +103,18 @@
                 // default options
                 settings = {
                     checkout: {type: "PayPal", email: "you@yours.com"},
-                    currency: "USD",
-                    language: "english-us",
+                    currency: "EUR",
+                    language: "german-ger",
 
                     cartStyle: "div",
                     cartColumns: [
                         {attr: "name", label: "Name"},
-                        {attr: "price", label: "Price", view: 'currency'},
+                        {attr: "price", label: "Preis", view: 'currency'},
                         {view: "decrement", label: false},
-                        {attr: "quantity", label: "Qty"},
+                        {attr: "quantity", label: "Anzahl"},
                         {view: "increment", label: false},
-                        {attr: "total", label: "SubTotal", view: 'currency'},
-                        {view: "remove", text: "Remove", label: false}
+                        {attr: "total", label: "Gesamt", view: 'currency'},
+                        {view: "remove", text: "Entfernen", label: false}
                     ],
 
                     excludeFromCheckout: ['thumb'],
@@ -124,7 +124,7 @@
                     shippingTotalRate: 0,
                     shippingCustom: null,
 
-                    taxRate: 0,
+                    taxRate: 19,
 
                     taxShipping: false,
 
@@ -1897,9 +1897,9 @@
                             simpleCart.add({
                                 name: ADD_BASKET_NAME,
                                 description: "Added to annoy you",
-                                price: 40,
+                                price: 0.80,
                                 quantity: 1,
-                                thumb: "https://upload.wikimedia.org/wikipedia/commons/2/24/Blue_Tshirt.j"
+                                thumb: ""
                             })
                         }
                     }
