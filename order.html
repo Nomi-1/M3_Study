@@ -26,17 +26,15 @@
 <body class="page-id-order">
 <div class="menu-wrapper">
     <div class="inner">
-        <div class="logo">
-            <a href="./index.html">
-                <img src="./assets/images/Logo.png" alt=""/>
-            </a>
-        </div>
         <div class="ed-menu">
             <ul class="menu-level-0">
-                <li><a href="./index.html">Home</a></li>
-                <li><a href="./index.html">Bowls</a></li> <!-- TODO FIX -->
-                <li><a href="./index.html#food_menu">Menü</a></li>
-                <li><a href="#contact">Kontakt</a></li>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/index.html#philosophie">Philosophie</a></li>
+                <li><a href="/index.html#food_menu">Menü</a></li>
+                <li><a href="/index.html#contact">Kontakt</a></li>
+                <li>
+                    <a href="/order.html" class="hightlight active">Online bestellen</a>
+                </li>
             </ul>
         </div>
         <!-- Here starts the mobile menu section -->
@@ -52,23 +50,29 @@
         </div>
     </div>
 </div>
-<div class="banner" id="home">
+<div class="banner" id="">
     <div class="banner-content">
+        <div class="inner">
+            <h1 class="special_h2">Wir liefern zu dir.</h1>
+            <div class="spacer"></div>
+        </div>
     </div>
 </div>
 
-<!-- Primary Page Layout
-   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-<div class="container simpleStore">
-    <div class="row">
-        <a class="button button-primary u-pull-right simpleStore_viewCart">
-            <i class="fa fa-shopping-cart"></i> Cart <span class="simpleCart_total"></span>
-        </a>
-    </div>
-    <div class="simpleStore_container"></div>
-    <div class="simpleStore_cart_container"></div>
-</div>
 
+<div class="container-flex">
+    <h2 class="special_h2">Bestelle jetzt deine Lieblingsbowl</h2>
+
+    <div class="container simpleStore">
+        <div class="row">
+            <a class="button button-primary u-pull-right simpleStore_viewCart">
+                <i class="fa fa-shopping-cart"></i> Bestellen <span class="simpleCart_total"></span>
+            </a>
+        </div>
+        <div class="simpleStore_container"></div>
+        <div class="simpleStore_cart_container"></div>
+    </div>
+</div>
 <!-- Templates
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
@@ -106,12 +110,12 @@
                 <span class="item_price"></span>
 
                 <div class="qty">
-                    <label>QTY
+                    <label>Anz
                         <input type="number" value="1" min="1" step="1" class="item_Quantity">
                     </label>
                 </div>
-                <div class="simpleStore_options"></div>
-                <a class="item_add button u-pull-right" href="javascript:">Add to Cart</a>
+                <!-- <div class="simpleStore_options"></div> -->
+                <a class="item_add button u-pull-right" href="javascript:">Hinzufügen</a>
             </div>
         </div>
     </div>
@@ -120,37 +124,43 @@
 <!-- Cart View -->
 <script id="cart-template" type="x-template">
     <div class="simpleStore_cart">
-        <h2>Cart</h2>
+        <h2>Deine Bestellung</h2>
         <a href="#" class="close">&times;</a>
 
         <div class="row">
             <div class="eight store_columns">
                 <div class="simpleCart_items"></div>
                 <div class="shame_dp">
-                    <div style="font-size: 1.6em">For only one Euro more you can save the planet and make your purchase green!<small>*</small></div>
-                    <div><a href="javascript:" class="shame_dp_accept button">Yes please</a><a href="javascript:" class="shame_dp_decline button">No I hate this planet!</a></div>
+                    <div style="font-size: 1.6em">Let's save the planet together – Spende 1€ für die
+                        Umwelt<small>*</small></div>
+                    <div><a href="javascript:" class="shame_dp_accept button">Be Green</a><a href="javascript:"
+                                                                                             class="shame_dp_decline button">Nein,
+                        lieber nächstes mal</a></div>
                 </div>
-                <div><a href="javascript:" class="simpleCart_empty u-pull-left">Empty Cart <i class="fa fa-trash-o"></i></a></div><br/><br/>
-                <div><small>* More information can be found in our imprint</small></div>
+                <div><a href="javascript:" class="simpleCart_empty u-pull-left">Bestellung zurücksetzen <i
+                        class="fa fa-trash-o"></i></a></div>
+                <br/><br/>
+                <div><small>* Mehr Informationen findest du in unserem Impressum</small></div>
             </div>
             <div class="four store_columns">
                 <div class="cart_info">
-                    <div class="cart_info_item cart_itemcount">Items:
+                    <div class="cart_info_item cart_itemcount">Summe:
                         <div class="simpleCart_quantity"></div>
                     </div>
-                    <div class="cart_info_item cart_taxrate">Tax Rate:
-                        <div class="simpleCart_taxRate"></div>
-                    </div>
-                    <div class="cart_info_item cart_tax">Tax:
+                    <!-- <div class="cart_info_item cart_taxrate">MwSt %:
+                         <div class="simpleCart_taxRate"></div>
+                     </div>-->
+                    <div class="cart_info_item cart_tax">MwSt:
                         <div class="simpleCart_tax"></div>
                     </div>
-                    <div class="cart_info_item cart_shipping">Shipping:
+                    <!--<div class="cart_info_item cart_shipping">Shipping:
                         <div class="simpleCart_shipping"></div>
-                    </div>
-                    <div class="cart_info_item cart_total"><b>Total:
+                    </div> -->
+                    <div class="cart_info_item cart_total"><b>Gesamt:
                         <a class="simpleCart_grandTotal"></a>
                     </b></div>
-                    <a href="javascript:" class="button button-primary simpleStore_checkout u-pull-right">Checkout <i class="fa fa-arrow-right"></i></a>
+                    <a href="javascript:" class="button button-primary simpleStore_checkout u-pull-right">Jetzt
+                        bestellen <i class="fa fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
@@ -161,7 +171,7 @@
 <!-- Error View -->
 <script id="error-template" type="x-template">
     <div class="error">
-        <b>Sorry, something went wrong :(</b>
+        <b>Sorry, da ist etwas schiefgegangen - versuche es nochmal</b>
         <p class="error_text"></p>
         <a href="#" class="close alert_close">&times;</a>
     </div>
@@ -174,7 +184,7 @@
         <div class="columns-three">
             <div class="column address">
                 <p>Alexanderplatz 1 10178 Berlin</p>
-                <p><a href="legal_notice.html">Impressum</a> &#124; <a href="legal_notice.html">Datenschutz</a></p>
+                <p><a href="legal_notice.html">Impressum</a> &#124; <a href="privacy.html">Datenschutz</a></p>
             </div>
             <div class="column">
                 <p>Telefon: 030 - 123 456 789<br/>E-Mail: hello@avo-cado.de</p>
