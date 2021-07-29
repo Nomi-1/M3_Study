@@ -1,0 +1,19 @@
+kind: pipeline
+type: docker
+name: build
+
+trigger:
+  branch:
+    - main
+
+steps:
+
+  - name: build container
+    image: plugins/docker
+    settings:
+      username:
+        from_secret: docker_user
+      password:
+        from_secret: docker_pw
+      repo: floreitz/m3
+      tags: latest
