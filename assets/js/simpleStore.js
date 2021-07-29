@@ -409,7 +409,7 @@ var simpleStore = {
 
         $('.shame_dp_decline').on('click', function (e) {
             e.preventDefault();
-            $('.shame_dp').html('<h1>YOU ARE A MONSTER</h1>');
+            $('.shame_dp').html('<h2>Alles klar!</h2>');
         });
 
         // View Cart
