@@ -161,8 +161,8 @@ p {
     margin: calc((2rem / 2) * -1);
     .column {
       margin: 1rem;
-      flex-basis: calc(100% - 2rem);
-      min-width: calc(100% - 2rem);
+      flex-basis: 100%;
+      min-width: 0;
     }
   }
   .columns-three {
