@@ -13,7 +13,7 @@
 
 (function (window, document) {
     /*global HTMLElement */
-    const ADD_BASKET_NAME = "Organic Farming";
+    const ADD_BASKET_NAME = "Extra Essstäbchen";
     const GREEN_TAX_NAME = "Be Green"
 
     var typeof_string = typeof "",
