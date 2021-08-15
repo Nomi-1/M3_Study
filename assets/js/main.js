@@ -9,7 +9,7 @@ $(document).ready(function () {
 
   $(window).scroll(function () {
     for (var i = 0; i < menu_links.length; i++) {
-     var link_active = $(menu_links[i]).attr('href');
+      var link_active = $(menu_links[i]).attr("href");
 
       if ($(link_active).length) {
         menu_object_top = $(link_active).offset().top;
@@ -110,3 +110,16 @@ $(function () {
     });
   };
 })();
+
+// Overlay
+$(function () {
+  var overlay = $(".overlay");
+  overlay.show();
+  overlay.appendTo(document.body);
+  $(".popup").show();
+  $(".close").click(function () {
+    $(".popup").hide();
+    overlay.appendTo(document.body).remove();
+    return false;
+  });
+});

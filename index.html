@@ -17,6 +17,10 @@
       integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
       crossorigin="anonymous"
     ></script>
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-1.8.2.js"
+    ></script>
     <script src="./assets/js/lightbox.js"></script>
     <link
       href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -25,10 +29,26 @@
   </head>
 
   <body>
+    <div class="overlay"></div>
+    <div class="popup">
+      <div class="cnt223">
+        <h3>Willkommen bei unserer Studie über XX</h3>
+        <br />
+        <p>
+          Mache dir einen Eindruck über unsere Seite. Wenn du unsere Produkte
+          endeckt hast und dich bereit fühlst eine Bestellung aufzugeben, dann klicke
+          auf <strong>Jetzt Bestellen</strong> oder <strong>Online Bestellen</strong><br /><br />Vielen Dank für deine
+          Teilnahme
+          <br />
+          <br />
+          <a href="" class="close">Zum Test</a>
+        </p>
+      </div>
+    </div>
     <div class="menu-wrapper">
       <div class="inner">
         <div class="logo">
-          <a href="./index.html">
+          <a href="./">
             <img src="./assets/images/logo.png" alt="" />
           </a>
         </div>
@@ -39,7 +59,9 @@
             <li><a href="#food_menu">Menü</a></li>
             <li><a href="#contact">Kontakt</a></li>
             <li>
-              <a href="/order.html" class="hightlight">Online bestellen</a>
+              <a href="https://forms.gle/Sav3VH54igW3jKbx8" class="hightlight"
+                >Online bestellen</a
+              >
             </li>
           </ul>
         </div>
@@ -61,9 +83,9 @@
         <div class="inner">
           <h1 class="special_h2">Hey.</h1>
           <div class="spacer"></div>
-          <h3>Bestelle deine Lieblingsbowl <br/></h3>
+          <h3>Bestelle deine Lieblingsbowl <br /></h3>
           <div class="button">
-            <a href="/order.html">Jetzt bestellen</a>
+            <a href="https://forms.gle/Sav3VH54igW3jKbx8">Jetzt bestellen</a>
           </div>
         </div>
       </div>
@@ -73,19 +95,25 @@
       <h2 class="special_h2">Unsere Philosophie</h2>
       <div class="spacer"></div>
       <p>
-        Wir sind Avo Cado - Wir bieten vegetarisch & vegane Küche und dabei achten wir auf unseren Planeten. 
-        Super leckeres Essen mit gutem Gewissen – das ist nicht nur unser Grundsatz, sondern unsere Einstellung.
-        Bei uns findet ihr keine Plastikverpackungen, denn wir verpacken unser Essen in einer der neusten und biologisch Abbaubaren ToGo Verpackungen. Diese Technologie wurde in Berlin entwickelt und basiert auf Hartweizen Pulver.
-        Natürlich sind unsere Verpackungen auch vegan. Außerdem sind unsere Produkte alle 100% Organisch und Regional.
+        Wir sind Avo Cado - Wir bieten vegetarisch & vegane Küche und dabei
+        achten wir auf unseren Planeten. Super leckeres Essen mit gutem Gewissen
+        – das ist nicht nur unser Grundsatz, sondern unsere Einstellung. Bei uns
+        findet ihr keine Plastikverpackungen, denn wir verpacken unser Essen in
+        einer der neusten und biologisch Abbaubaren ToGo Verpackungen. Diese
+        Technologie wurde in Berlin entwickelt und basiert auf Hartweizen
+        Pulver. Natürlich sind unsere Verpackungen auch vegan. Außerdem sind
+        unsere Produkte alle 100% Organisch und Regional.
         <br /><br />
-        Wir bieten euch die Möglichkeit etwas gutes zu tun – <strong>Let's save the planet together!</strong>
-        <br/>Aktiviere bei deiner nächsten Bestellung einfach den Be Green Button - damit spendest du automatisch 1€ für Umweltaktionen.
+        Wir bieten euch die Möglichkeit etwas gutes zu tun –
+        <strong>Let's save the planet together!</strong> <br />Aktiviere bei
+        deiner nächsten Bestellung einfach den Be Green Button - damit spendest
+        du automatisch 1€ für Umweltaktionen.
         <br />
         Wir freuen uns auf euch!
       </p>
       <div class="spacer"></div>
       <div class="button">
-        <a href="/order.html">Jetzt bestellen</a>
+        <a href="https://forms.gle/Sav3VH54igW3jKbx8">Jetzt bestellen</a>
       </div>
     </div>
     <div class="cta">
@@ -95,7 +123,7 @@
         <p>mit unseren regionalen Produkten</p>
         <div class="spacer"></div>
         <div class="button">
-          <a href="/order.html">Jetzt bestellen</a>
+          <a href="https://forms.gle/Sav3VH54igW3jKbx8">Jetzt bestellen</a>
         </div>
       </div>
     </div>
@@ -111,15 +139,15 @@
             <br />
             <p><strong>Avocado Wasabi Toast</strong></p>
             <p>
-              Avocado mit Hummus, gemischte Greens, Hibiscus,
-              Wasabi-Dressing und Sesam dazu regonales Vollkorn Brot
+              Avocado mit Hummus, gemischte Greens, Hibiscus, Wasabi-Dressing
+              und Sesam dazu regonales Vollkorn Brot
             </p>
             <p class="price">5.80€</p>
             <br />
             <p><strong>Shakshuka</strong></p>
             <p>
-              Shakshuka mit Mojo, Kokosjoghurt, Ei, Granatapfel, Harissa
-              und Koriander dazu selbst gebackenes Sauerteig-Pita
+              Shakshuka mit Mojo, Kokosjoghurt, Ei, Granatapfel, Harissa und
+              Koriander dazu selbst gebackenes Sauerteig-Pita
             </p>
             <p class="price">7.50€</p>
             <br />
@@ -145,23 +173,24 @@
             <br />
             <p><strong>Buddha Bowl</strong></p>
             <p>
-              gemischter Reis, Broccoli, Shiso rote Bete, haugemachter Hummus, Kimchi, Edamame-Wasabicreme, gerösteten
-              Kürbiskernen und veganes Dressing
+              gemischter Reis, Broccoli, Shiso rote Bete, haugemachter Hummus,
+              Kimchi, Edamame-Wasabicreme, gerösteten Kürbiskernen und veganes
+              Dressing
             </p>
             <p class="price">12.80€</p>
             <br />
             <p><strong>Garden Salad</strong></p>
             <p>
-              regionale Greens, Kirschtomaten, Blaubeeren, Zucchini,
-              Rote Beete, Fenchel, Karotte, Gurke,
-              Hanfsamen und Weizengras-Dressing dazu hausgemachtes Brot
+              regionale Greens, Kirschtomaten, Blaubeeren, Zucchini, Rote Beete,
+              Fenchel, Karotte, Gurke, Hanfsamen und Weizengras-Dressing dazu
+              hausgemachtes Brot
             </p>
             <p class="price">11.99€</p>
           </div>
         </div>
         <div class="spacer"></div>
         <div class="button">
-          <a href="/order.html">Jetzt bestellen</a>
+          <a href="https://forms.gle/Sav3VH54igW3jKbx8">Jetzt bestellen</a>
         </div>
       </div>
     </div>
@@ -189,7 +218,10 @@
         <div class="columns-three">
           <div class="column address">
             <p>Alexanderplatz 1 10178 Berlin</p>
-            <p><a href="legal_notice.html">Impressum</a> &#124; <a href="privacy.html">Datenschutz</a></p>
+            <p>
+              <a href="legal_notice.html">Impressum</a> &#124;
+              <a href="privacy.html">Datenschutz</a>
+            </p>
           </div>
           <div class="column">
             <p>Telefon: 030 - 123 456 789<br />E-Mail: hello@avo-cado.de</p>
