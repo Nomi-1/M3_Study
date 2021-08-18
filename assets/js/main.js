@@ -117,7 +117,7 @@ $(function () {
   overlay.show();
   overlay.appendTo(document.body);
   $(".popup").show();
-  $(".close").click(function () {
+  $(".close-overlay").click(function () {
     $(".popup").hide();
     overlay.appendTo(document.body).remove();
     return false;
