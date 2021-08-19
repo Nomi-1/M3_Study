@@ -616,11 +616,16 @@ p {
   .popup {
     width: 100%;
     max-width: 100%;
+    height: auto;
   }
   .popup .cnt223 {
     width: calc(100% - 2rem);
     max-width: calc(100% - 2rem);
     min-width: calc(100% - 2rem);
+    padding: 1rem;
+    max-height: 100vh;
+    overflow-y: scroll;
+    margin: 15px 0;
   }
   .container-flex {
     padding: 4rem 1rem;
