@@ -111,12 +111,15 @@
     transition: $transition-base;
   }
 }
+@media screen and(max-width: 1120px){
+  .banner .banner-content {
+    width: 100%;
+  }
+}
+
 @media screen and(max-width: 960px) {
   .image-frist {
     order: 1;
-  }
-  .banner .banner-content {
-    width: 100%;
   }
   .cta > .inner {
     width: calc(100% - 4rem);

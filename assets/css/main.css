@@ -124,12 +124,15 @@
   transition: all 0.2s ease-out;
 }
 
+@media screen and (max-width: 1120px) {
+  .banner .banner-content {
+    width: 100%;
+  }
+}
+
 @media screen and (max-width: 960px) {
   .image-frist {
     order: 1;
-  }
-  .banner .banner-content {
-    width: 100%;
   }
   .cta > .inner {
     width: calc(100% - 4rem);
@@ -379,7 +382,6 @@
   font-family: "Raleway";
   font-size: 16px;
   position: relative;
-  padding-left: 16px;
 }
 
 .page-id-legal .begreen {
@@ -574,14 +576,17 @@ p {
   text-decoration: none;
 }
 
-@media screen and (max-width: 960px) {
-  body {
-    overflow-y: scroll;
-  }
+@media screen and (max-width: 1120px) {
   .container-flex {
     width: 100%;
     max-width: 100%;
     padding: 8rem 1rem;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  body {
+    overflow-y: scroll;
   }
   .columns {
     width: 100%;
