@@ -45,7 +45,7 @@
   background: rgba(255, 255, 255, 0.85);
   padding: 1rem;
   position: relative;
-  width: 30%;
+  width: 40%;
   padding: 2rem;
   border: 2px solid #79ba11;
   justify-content: center;
@@ -54,6 +54,7 @@
 .cta > .inner h2,
 .cta > .inner p {
   text-align: center;
+  color: #000;
 }
 
 .cta > .inner .button {
@@ -63,6 +64,31 @@
 .cta .special_h2:before {
   left: 50%;
   transform: translateX(-50%);
+}
+
+.about-me {
+  width: 100%;
+  background: #ededed;
+}
+
+.about-me > .inner {
+  flex-direction: row;
+}
+
+.about-me > .inner .about-me-column {
+  max-width: 50%;
+}
+
+.about-me > .inner .about-me-column:last-child {
+  padding-left: 1rem;
+}
+
+.about-me > .inner .about-me-column:first-child {
+  padding-right: 1rem;
+}
+
+.about-me > .inner .about-me-column img {
+  max-width: 100%;
 }
 
 .gallery {
@@ -136,6 +162,18 @@
   }
   .cta > .inner {
     width: calc(100% - 4rem);
+  }
+  .about-me > .inner {
+    flex-direction: column;
+  }
+  .about-me > .inner .about-me-column {
+    max-width: 100%;
+  }
+  .about-me > .inner .about-me-column:first-child {
+    padding: 0 0 1rem 0;
+  }
+  .about-me > .inner .about-me-column:last-child {
+    padding: 0rem;
   }
 }
 

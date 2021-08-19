@@ -42,13 +42,14 @@
     background: rgba(white, 0.85);
     padding: 1rem;
     position: relative;
-    width: 30%;
+    width: 40%;
     padding: 2rem;
     border: 2px solid $color-primary;
     justify-content: center;
     h2,
     p {
       text-align: center;
+      color: #000;
     }
     .button {
       margin: 0 auto;
@@ -57,6 +58,26 @@
   .special_h2:before {
     left: 50%;
     transform: translateX(-50%);
+  }
+}
+
+.about-me {
+  width: 100%;
+  background: $light-grey;
+  > .inner {
+    flex-direction: row;
+    .about-me-column {
+      max-width: 50%;
+      &:last-child {
+        padding-left: 1rem;
+      }
+      &:first-child {
+        padding-right: 1rem;
+      }
+      img {
+        max-width: 100%;
+      }
+    }
   }
 }
 
@@ -111,7 +132,7 @@
     transition: $transition-base;
   }
 }
-@media screen and(max-width: 1120px){
+@media screen and(max-width: 1120px) {
   .banner .banner-content {
     width: 100%;
   }
@@ -123,6 +144,18 @@
   }
   .cta > .inner {
     width: calc(100% - 4rem);
+  }
+  .about-me > .inner {
+    flex-direction: column;
+    .about-me-column {
+      max-width: 100%;
+      &:first-child {
+        padding: 0 0 1rem 0;
+      }
+      &:last-child {
+        padding: 0rem;
+      }
+    }
   }
 }
 @media screen and(max-width: 720px) {
