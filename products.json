@@ -23,10 +23,10 @@
 		},
 		{
 			"name" : "Buddha Bowl",
-			"price" : "12.99",
+			"price" : "12.80",
 			"options" : [],
 			"image" : "../assets/images/img_4.jpg",
-			"description" : "This is another fun grey T-shirt"
+			"description" : "gemischter Reis, Broccoli, Shiso rote Bete, haugemachter Hummus, Kimchi, Edamame-Wasabicreme, gerösteten Kürbiskernen und veganes Dressing"
 		},
 		{
 			"name" : "Garden Salad",
